@@ -23,7 +23,7 @@ mvn spring-boot:run
 
 The service will be hosted in 18.224.37.53 port 8083
 
-## Usage
+## Manual
 To get all the films in the data base: '/all'
 To filter by title: '/film?title='
 
@@ -31,5 +31,5 @@ eg.
 ```bash
 http://18.224.37.53:8083/all
 http://18.224.37.53:8083/film?title=180
-``
+```
 
