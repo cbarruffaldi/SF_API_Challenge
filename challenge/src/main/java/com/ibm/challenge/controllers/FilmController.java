@@ -4,10 +4,7 @@ import com.ibm.challenge.beans.Film;
 import com.ibm.challenge.beans.FilmResponse;
 import com.ibm.challenge.utils.JsonParser;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +16,7 @@ public class FilmController {
     List every film in the database, if location is not available it is shown too.
     If there is no location specified, the field should be an empty string.
      */
-    @RequestMapping(method = RequestMethod.GET, value="/films")
+    @RequestMapping(method = RequestMethod.GET, value="/all")
     @ResponseBody
     public List<FilmResponse> getAllMovies() {
         List<Film> films = JsonParser.parse();
@@ -37,9 +34,9 @@ public class FilmController {
     /*
     Filter by title
      */
-    @RequestMapping(method = RequestMethod.GET, value="/films/{title}")
+    @RequestMapping(method = RequestMethod.GET, value="/film")
     @ResponseBody
-    public List<FilmResponse> getMovieByName(@PathVariable String title) {
+    public List<FilmResponse> getMoviesByName(@RequestParam(value = "title", required = true) String title) {
         List<Film> films = JsonParser.parse();
         List<FilmResponse> response = new ArrayList<>();
 
@@ -53,4 +50,5 @@ public class FilmController {
 
         return response;
     }
+
 }
