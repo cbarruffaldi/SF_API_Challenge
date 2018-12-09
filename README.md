@@ -23,7 +23,7 @@ mvn spring-boot:run
 
 The service will be hosted in 18.224.37.53 port 8083
 
-## Manual
+## Usage
 To get all the films in the data base: '/all'
 To filter by title: '/film?title='
 
@@ -32,4 +32,7 @@ eg.
 http://18.224.37.53:8083/all
 http://18.224.37.53:8083/film?title=180
 ```
+
+## Other
+For the requirement to not take more than 5 hours for the challenge, automated testing is not implemented yet. But it would be a good way to check the service.
 
