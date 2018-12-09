@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Objects;
 
 /*
-This parser takes data from the original database API, this way it is always up to date.
+This parser takes data from the external database API, this way it is always up to date.
 Creates a Collection of Films that later will be manipulated by te service.
  */
 public class JsonParser {
