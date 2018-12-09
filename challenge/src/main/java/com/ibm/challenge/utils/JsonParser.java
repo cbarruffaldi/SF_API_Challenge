@@ -40,7 +40,7 @@ public class JsonParser {
 
         try {
             /* I use the API provided in the website to get all the data. Note that another option is to download
-             * the data as CSV, parse it and store it */
+             * the data as CSV, parse it and store it (but local data will not be up to date) */
             URL database = new URL("https://data.sfgov.org/resource/wwmu-gmzc.json");
             URLConnection yc = database.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
@@ -75,7 +75,7 @@ public class JsonParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (ParseException e) {
+          catch (ParseException e) {
             e.printStackTrace();
         }
         return films;
